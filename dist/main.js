@@ -1,1 +1,0 @@
-(()=>{var o,c=[12,34,9,11,22,33];console.log(c),o=c[0],console.log("sum ".concat(o))})();

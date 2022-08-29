@@ -1,10 +1,6 @@
-var arr = [12,34,9];
+require("@babel/polyfill");
+import Search from "./model/search";
 
-var heyFun = a =>{
-    console.log(`sum ${a}`);
-};
+let sr = new Search("pizza");
 
-var lala = [...arr, 11,22,33];
-console.log(lala)
-
-heyFun(lala[0])
+sr.do_Search().then(err => console.log(err));

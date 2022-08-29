@@ -8,3 +8,7 @@ babel g suulgasan ni:
 -babel.config.js file uusgeed dotor ni instruction code g ni bairluulsan
 -devDependency dotor babel/core babel/preset-env babel/cli g install hiisen 
 -dependency dotor installed @babel/polyfill bolon loaddash g install hiine
+es6 module architature:
+-js file dotor model folder bolon view folder uusgeed
+-website t boloogtoi js files g model dotor ussgeh
+-website t holbootoi (display ruu gargah) view js files g view folder dotor uusgene
