@@ -22,6 +22,14 @@ domElement.search_result.insertAdjacentHTML("beforeend", list)
 }
 // to get value form user-input then pass it
 export const getInput = () => domElement.input__field.value;
+// to clear input after click submit button
+export const clearInput = () => {
+    domElement.input__field.value = '';
+}
+// clear the searched result
+export const clearResult = () => {
+    domElement.search_result.innerHTML = '';
+}
 export const render_Recipies = (recipies) => {
     // console.log(recipies);
     recipies.forEach(elements => render_Rec(elements));

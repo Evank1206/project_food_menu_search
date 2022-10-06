@@ -15,11 +15,14 @@ const process_searching = async () =>{
     // let inpt = "steak";
     let inpt = searchView.getInput();
     // 2.to create search object 
+    // if to submit the search input empty, It will give alert messege
     if(inpt){
     // checking the input empty or NOT condtion
     // empty state obj dotor "srch" gedeg obj uusgeed ter ni dotor constructor function aa hiine
         state.srch = new Search(inpt);
     // 3.to prepare UI
+        searchView.clearInput(); // clear the input 
+        searchView.clearResult(); // clear the searched result from display
     // 4.to complete search 
         await state.srch.do_Search();
     // 5.to show on the DOM
@@ -32,7 +35,9 @@ const process_searching = async () =>{
         }
         
 
-    }else{alert("***search input is empty***")} 
+    }else{
+        alert("***search input is empty***");
+    } 
 
 };
 
