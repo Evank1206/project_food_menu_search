@@ -2,6 +2,7 @@ require("@babel/polyfill");
 import Search from "./model/search";
 import {domElement} from "./base_DOM";
 import * as searchView from "./view/viewSearch";
+import { parseInt } from "lodash";
 
 // let sr = new Search("pizza");
 // sr.do_Search().then(err => console.log(err));
@@ -47,5 +48,24 @@ domElement.submit_search.addEventListener("submit", e => {
     process_searching();
 
 });
+// console.log(state);
 
-console.log(state);
+// to eventListerner for created button 
+domElement.showBtn.addEventListener("click", e =>{
+    // to catch clicked location using js closest() function
+    let btn = e.target.closest(".btn-inline");
+        // console.log(btn);
+   
+    if(btn){
+        // to using dataset js atterbute and gete goto from html
+        const page_Data_Saver = parseInt(btn.dataset.goto,10);
+            console.log(typeof page_Data_Saver);
+
+        // clear the first page result && clear the clicked button too
+        searchView.clearResult();
+        // to call the render function and pass recipies and pageData
+        searchView.render_Recipies(state.srch.ress, page_Data_Saver);
+       
+
+    }
+})

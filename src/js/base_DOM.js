@@ -3,5 +3,8 @@ export const domElement = {
     submit_search : document.querySelector(".search"),
     search_result : document.querySelector(".results__list"),
     main : document.querySelector(".recipe"),
+    showBtn : document.querySelector(".results__pages"),
+    // type : document.querySelector(".results__btn"),
+
 
 }
