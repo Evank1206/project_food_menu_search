@@ -4,7 +4,5 @@ export const domElement = {
     search_result : document.querySelector(".results__list"),
     main : document.querySelector(".recipe"),
     showBtn : document.querySelector(".results__pages"),
-    // type : document.querySelector(".results__btn"),
-
-
+    recipe : document.querySelector(".recipe"),
 }

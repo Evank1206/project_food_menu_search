@@ -1,5 +1,5 @@
 import { before, lodash, tap } from "lodash";
-import {domElement} from "../base_DOM";
+import {domElement} from "../model/base_DOM";
 // html for displaying results
 const render_Rec = (e) => {
     // console.log(e);
@@ -8,7 +8,7 @@ const render_Rec = (e) => {
 
     let list = 
     `<li>
-        <a class="results__link" href=${e.recipe_id}>
+        <a class="results__link" href=#${e.recipe_id}>
             <figure class="results__fig">
                 <img src=${e.image_url} alt="Test">
             </figure>
@@ -31,6 +31,13 @@ domElement.search_result.insertAdjacentHTML("beforeend", list);
 domElement.main.innerHTML = loading;
 
 };
+// to display ingredets recipies result html
+// const ingredets_recipies = (a,b,c,d,e,f) =>{
+//     let detail = 
+//     `
+    
+//     `
+// }
 // button's html: type = "prev" OR "next"
 const htmlButton = (pageNum, type, diraction) => 
 `
@@ -48,7 +55,7 @@ const renderBtn = (cPage, tPage) =>{
     // check the condition
     if(cPage === 1 && tPage > 1){
         // to show NEXT button  "rigth & left" are direction arrow
-       button =  htmlButton(1, "next", 'right')
+       button =  htmlButton(2, "next", 'right')
     }else if(cPage < tPage){
         // to show PREVIUOS and NEXT button
        button =  htmlButton(cPage -1, "prev", "left")

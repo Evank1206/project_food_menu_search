@@ -1,7 +1,7 @@
 webpack g suulgasan ni:
-npm init -y buyu package.js file g install hiisen
-webpack.config.js file g uusgesen, dotor ni istruction code g copy past hiisen
-dist, src folder uusgeed src dotor html, js file uusgej hiisen, dist dotor css, img file aa hiisen
+npm init -y (buyu package.js file g install hiisen)
+webpack.config.js file g uusgesen, (dotor ni instruction code g webpack.com s copy past hiisen)
+dist, src folder uusgeed src dotor html, js file uusgej hiisen, (dist dotor css, img file aa hiisen)
 install to devDependency ruu webpack --mode development,webpack --watch,webpack serve --open, webpack --mode production
 babel g suulgasan ni:
 -babel-loader g devDependency ruu install hiisen ba webpack.config.js dotor instuction codiig ni copy past hiisen
