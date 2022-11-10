@@ -5,6 +5,8 @@ import * as searchView from "./view/viewSearch";
 import { parseInt } from "lodash";
 import Recipies from "./model/recipies";
 import {clearRecip, displayRecip} from "./view/recipiesView";
+import List from "./model/list";
+import * as listRecipe from "./view/listView"; 
 
 // let sr = new Search("pizza");
 // sr.do_Search().then(err => console.log(err));
@@ -36,14 +38,10 @@ const process_searching = async () =>{
         }else{
             alert("The Search NOT FOUND any result!");
         }
-        
-
     }else{
         alert("***search input is empty***");
     } 
-
 };
-
 // // to get submit event listener
 domElement.submit_search.addEventListener("submit", e => {
     e.preventDefault(); // this is prevent the broswer do automatic refreshing
@@ -51,7 +49,6 @@ domElement.submit_search.addEventListener("submit", e => {
 
 });
 // console.log(state);
-
 // to eventListerner for created button 
 domElement.showBtn.addEventListener("click", e =>{
     // to catch clicked location using js closest() function
@@ -69,7 +66,8 @@ domElement.showBtn.addEventListener("click", e =>{
     }
 });
 
-// Display Recipies CONTROLLER 2
+// DISPLAY RECIPIES CONTROLLER 2
+
 const process_recipies = async ()=>{
     // 1. to get location of hash (ID);
     // every url has window.location.hash, SO using it for get unique hash (id) of item
@@ -85,15 +83,35 @@ const process_recipies = async ()=>{
     // console.log(state.indivitual_result.title);
     clearRecip();
     displayRecip(state.indivitual_result)
-
 }
 // using hashchange for getting clicked event lister
 window.addEventListener("hashchange", process_recipies);
 // when refresh the page, result won't disappear using "load"
 window.addEventListener("load", process_recipies);
 
+// DISPLAY LIST CONTROLLER 3
 
-// SHOWING RECIPIES PART
+const processing_list =  () => {
+    // to create list in state and put to list new list
+    state.list = new List();
+    // clear the already existing list 
+    listRecipe.clearList();
+    // let id = state.indivitual_result.id
+    // let title = state.indivitual_result.title;
+    // let img = state.indivitual_result.image_url;
+    // To sending to listView for DOM
+    listRecipe.display_list(state.indivitual_result.id, state.indivitual_result.title);
+
+};
+domElement.recipe.addEventListener("click", e =>{
+    // select the div contains everything then using matches() for if clicked curtain clicked class
+    if(e.target.matches(".recipe__btn, .recipe__btn *")){
+        processing_list()
+    }
+});
+
+
+
 
 
 

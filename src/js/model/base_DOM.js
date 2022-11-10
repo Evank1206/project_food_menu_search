@@ -5,4 +5,5 @@ export const domElement = {
     main : document.querySelector(".recipe"),
     showBtn : document.querySelector(".results__pages"),
     recipe : document.querySelector(".recipe"),
+    shopping_list : document.querySelector(".shopping__list")
 }

@@ -23,7 +23,7 @@ export const displayRecip = (rec) => {
         this.image_url = result.data.recipe.image_url;
         this.source_url = result.data.recipe.source_url;
         this.social_rank = result.data.recipe.social_rank; */
-        console.log(rec.inredients);
+        // console.log(rec.inredients);
     let hmtl = 
     `<figure class="recipe__fig">
         <img src="${rec.image_url}" alt="${rec.title}" class="recipe__img">
@@ -96,4 +96,5 @@ export const displayRecip = (rec) => {
     </div>
     `
     domElement.recipe.insertAdjacentHTML('afterbegin', hmtl);
+
 };
